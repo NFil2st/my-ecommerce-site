@@ -662,7 +662,7 @@ h1, h2, h3, h4, h5,
   .intro-section h1 {
     font-size: 4rem;
     font-weight: 900;
-    color: #fff; }
+    color: #4df3cb; }
     @media (max-width: 991.98px) {
       .intro-section h1 {
         font-size: 2rem; } }
