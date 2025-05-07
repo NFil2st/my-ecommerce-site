@@ -1710,11 +1710,7 @@
   <script src="js/main.js"></script>
 
   <script>
-    loadDoc("./xml/class_sunday.xml", classXML);
 
-    loadDoc("./json/class_sunday.json", classJSON);
-
-    loadSubject("./json/contact_subject.json");
 
     function loadDoc(url, cFunction) {
       const xhttp = new XMLHttpRequest();
@@ -1796,6 +1792,10 @@
 
       const contact = document.getElementById("contact-head");
       contact.innerHTML = "อะหรี่ดอย";
+
+      loadDoc("./xml/class_sunday.xml", classXML);
+      loadDoc("./json/class_sunday.json", classJSON);
+      loadSubject('http://localhost:4040/suject');
     };
   </script>
 </body>
