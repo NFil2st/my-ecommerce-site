@@ -1619,20 +1619,20 @@
           
                     <div class="form-group row">
                       <div class="col-md-12">
-                        <input type="text" class="form-control" placeholder="Username">
+                        <input type="text" id="username" class="form-control" placeholder="Username">
                       </div>
                     </div>
           
                     <div class="form-group row">
                       <div class="col-md-12">
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" id="checkpassword" class="form-control" placeholder="Password">
                       </div>
                     </div>
           
                     <div class="form-group row">
                       <div class="col-md-6">
           
-                        <input type="submit" class="btn btn-primary py-3 px-5 btn-block" value="Login">
+                        <input type="button" onclick="checkLogin()" class="btn btn-primary py-3 px-5 btn-block" value="Login">
                       </div>
                     </div>
           
@@ -1934,8 +1934,41 @@ document.addEventListener("DOMContentLoaded", () => {
         body : JSON.stringify(formData)
       });
 
-      console.log(response);
+      const resultregis = await response.json();
+
+      if (resultregis.success) {
+        alert(resultregis.message);
+      } else {
+        alert("Register failed: " + resultregis.message);
+      }
     }
+  
+  async function checkLogin() {
+  const email = document.getElementById('username').value.trim();
+  const password = document.getElementById('checkpassword').value.trim();
+
+  try {
+    const response = await fetch('http://localhost:5000/api/checklogin', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email, password })
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      alert("Login successfully.");
+    } else {      
+      alert(result.message || "Incorrect password."); // ✅ แสดง message ที่ส่งมาจาก backend
+    }
+
+  } catch (error) {
+    console.error("Error :", error);
+    alert("เกิดข้อผิดพลาดขณะเชื่อมต่อกับเซิร์ฟเวอร์");
+  }
+}
   </script>
 </body>
 

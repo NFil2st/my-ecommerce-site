@@ -6,5 +6,21 @@
     "password": "adasdas",
     "occupationCategory": "Computer",
     "occupation": "Video Game Developer"
+  },
+  {
+    "firstName": "First",
+    "lastName": "abcd",
+    "email": "dorothy@gmail.com",
+    "password": "123456",
+    "occupationCategory": "Computer",
+    "occupation": "Data Analyst"
+  },
+  {
+    "firstName": "vdv",
+    "lastName": "dvsd",
+    "email": "dorothy@gmail.co",
+    "password": "55555",
+    "occupationCategory": "Computer",
+    "occupation": "Network administrator"
   }
 ]

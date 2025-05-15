@@ -9,6 +9,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use('/api/register', require('./routes/register'));
+app.use('/api/checklogin', require('./routes/login'));
 
 app.listen(PORT, () => {
     console.log('Server running at http://localhost:'+ PORT);
